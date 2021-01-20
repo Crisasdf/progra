@@ -39,6 +39,17 @@ public class DemoApplication {
             }
         }
         JOptionPane.showMessageDialog(null, "Terminó el ciclo");
-    }
 
+
+        //Avisar cuando la cocina esté a 100 grados si es que estaba al inicio en 0 grados y va aumentando de 10 grados a la vez
+        int temperaturaCocina = 0;
+        int grados = 10;
+        while (temperaturaCocina < 100) {
+            temperaturaCocina = temperaturaCocina + grados;
+            if (temperaturaCocina < 100) {
+                JOptionPane.showMessageDialog(null, "La cocina todavia no está lista, va en " + temperaturaCocina + " grados");
+            }
+        }
+        JOptionPane.showMessageDialog(null, "La cocina está lista, llegó a los " + temperaturaCocina + " grados");
+    }
 }
