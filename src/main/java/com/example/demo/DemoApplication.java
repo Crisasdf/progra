@@ -51,5 +51,28 @@ public class DemoApplication {
             }
         }
         JOptionPane.showMessageDialog(null, "La cocina está lista, llegó a los " + temperaturaCocina + " grados");
+
+        //Preguntar hasta que usuario diga detente
+        String order = "";
+        do {
+            order = JOptionPane.showInputDialog(null, "Quiere que me detenga?");
+        } while (!order.equals("detente"));
+
+
+        String opcion = JOptionPane.showInputDialog(null, "Por favor ingrese a que clase quiere ingresar\n1.-Cocina\n2.-Informatica");
+        switch (opcion) {
+            case "1":
+                //Cocinar
+                JOptionPane.showMessageDialog(null, "Bienvenido a la clase de cocina");
+                break;
+            case "2":
+                //Informatica
+                JOptionPane.showMessageDialog(null, "Bienvenido a la clase de informatica");
+                break;
+            default:
+                //salir
+                JOptionPane.showMessageDialog(null, "Vayase a la verga");
+                break;
+        }
     }
 }
