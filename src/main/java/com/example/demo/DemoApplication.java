@@ -25,7 +25,7 @@ public class DemoApplication {
         }
 
         //Calcule que numeros primos entre 1 y 20 -->numeros primos son los dividos por si mismo y 1
-        for (int i = 2; i <= 20; i++) {
+       /* for (int i = 2; i <= 20; i++) {
             int contador = 0;
             for (int j = 2; j <= 20; j++) {
                 if (contador < 2) {
@@ -38,11 +38,11 @@ public class DemoApplication {
                 }
             }
         }
-        JOptionPane.showMessageDialog(null, "Terminó el ciclo");
+      //  JOptionPane.showMessageDialog(null, "Terminó el ciclo");//
 
 
         //Avisar cuando la cocina esté a 100 grados si es que estaba al inicio en 0 grados y va aumentando de 10 grados a la vez
-        int temperaturaCocina = 0;
+       int temperaturaCocina = 0;
         int grados = 10;
         while (temperaturaCocina < 100) {
             temperaturaCocina = temperaturaCocina + grados;
@@ -50,6 +50,6 @@ public class DemoApplication {
                 JOptionPane.showMessageDialog(null, "La cocina todavia no está lista, va en " + temperaturaCocina + " grados");
             }
         }
-        JOptionPane.showMessageDialog(null, "La cocina está lista, llegó a los " + temperaturaCocina + " grados");
+        JOptionPane.showMessageDialog(null, "La cocina está lista, llegó a los " + temperaturaCocina + " grados");*/
     }
 }
