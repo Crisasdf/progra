@@ -3,6 +3,7 @@ package com.example.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import javax.imageio.ImageTranscoder;
 import javax.swing.*;
 
 @SpringBootApplication
@@ -12,8 +13,64 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
         System.setProperty("java.awt.headless", "false");
 
+        //Ejercicio 1
+
+        double cateto1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese valor cateto1 : "));
+        double cateto2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese valor cateto1 : "));
+
+        double hypo;
+        hypo = Math.pow(cateto1,2) + Math.pow(cateto2,2);
+        hypo = Math.pow(hypo,0.5);
+
+        JOptionPane.showMessageDialog(null, "Valor de la hipotenusa es: " + hypo);
+
+        //Ejercicio 2
+
+        String emotion = JOptionPane.showInputDialog("Escriba una emocion predeterminada: " + "\n " +
+                "1)Saludo\n" +
+                "2)Despedida\n" +
+                "3)Agradecimiento\n" +
+                "4)Rabia");
+        switch (emotion){
+            case "saludo" :
+                JOptionPane.showMessageDialog(null,"Buen dia humano!");
+                break;
+
+            case "despedida":
+                JOptionPane.showMessageDialog(null,"Hasta luego humano!");
+                break;
+            case "agradecimiento":
+                JOptionPane.showMessageDialog(null,"Muchas gracias humano!");
+                break;
+            case "rabia":
+                JOptionPane.showMessageDialog(null,"Enojese humano!");
+                break;
+            default:
+                JOptionPane.showMessageDialog(null,"Todo bien en casa?!");
+                break;
+
+        }
+
+        //Ejercicio 3
+         double tope = Double.parseDouble(JOptionPane.showInputDialog("Ingrese numero de tope para calcular raices cuadradas enteras: "));
+
+        for(int i = 1;i <=tope;i++){
+
+            double resultado = Math.pow(i,0.5);
+            if(resultado % 1 == 0) {
+                JOptionPane.showMessageDialog(null, "La raiz " + i + " da resultado entero y es :" + "\n" +
+                        "***" + resultado + "***");
+            }else{
+                    JOptionPane.showMessageDialog(null,"La raiz  " +  i  + "  no da resultado entero");
+                }
+            }
+
+        }
 
 
+
+
+/*
 
         //EJERCICIO 1
          int opcion = Integer.parseInt(JOptionPane.showInputDialog("Elija una opción a convertir: \n1)CLP A USD\n2)USD A CLP"));
@@ -114,4 +171,4 @@ public class DemoApplication {
 
           */
     }
-}
+
