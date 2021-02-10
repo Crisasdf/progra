@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.controller.NumerosPrimos;
+import com.example.demo.controller.Saludo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,7 +14,19 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
         System.setProperty("java.awt.headless", "false");
 
-        //Decir nombre y dar una caracteristica
+        NumerosPrimos clase = new NumerosPrimos();
+        Saludo saludo = new Saludo();
+
+        //String opcion = JOptionPane.showInputDialog("ingrese que opcion desea \n1) Saludo \n2) Despedida \n3) Agradecimiento \n4) Rabia");
+        String opcion = JOptionPane.showInputDialog("ingrese que opcion desea \n1) Español \n2) Ingles \n3) Japones \n4) frances");
+        //saludo.saludoSegunEmocion(opcion);
+
+        String respuesta = saludo.saludoSegunPais(opcion);
+        JOptionPane.showMessageDialog(null, respuesta);
+
+        clase.calcularNumeroPrimo();
+
+        /*//Decir nombre y dar una caracteristica
         String name = JOptionPane.showInputDialog("Favor, diga su nombre: ");
         if ("rafa".equals(name) || "matias".equals(name) || "rafita".equals(name) || "guapo".equals(name)) {
             JOptionPane.showMessageDialog(null, "El " + name + " es flaco");
@@ -73,6 +87,6 @@ public class DemoApplication {
                 //salir
                 JOptionPane.showMessageDialog(null, "Vayase a la verga");
                 break;
-        }
+        }*/
     }
 }
