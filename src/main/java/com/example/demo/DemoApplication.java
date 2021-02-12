@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import Clases.estimarEdad;
+import Clases.nombreApellido;
+import Clases.timbreMicroondas;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,7 +16,72 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
         System.setProperty("java.awt.headless", "false");
 
+
+
+
+
+    String opcion = JOptionPane.showInputDialog("Elija una opcion: \n 1)Nombre y Apellido \n 2)Timbre de microondas\n 3)Estimar edad \n 4)Salir");
+
+        //while(opcion == "1" || opcion == "2" || opcion == "3" || opcion == "4") {
+
+
+            switch (opcion) {
+                case "1":
+                    //Opcion 1
+                    nombreApellido nomApe = new nombreApellido();
+
+
+                    String nombre = JOptionPane.showInputDialog("Nombre: ");
+                    String apellido = JOptionPane.showInputDialog("Apellido: ");
+
+                    String saludo = nomApe.saludaNombre(nombre, apellido);
+
+                    JOptionPane.showMessageDialog(null, "Hola ," + saludo);
+                    break;
+                case "2":
+                    //Opcion 2
+
+                    timbreMicroondas bipbip = new timbreMicroondas();
+
+                    int segundos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese tiempo: "));
+
+                    int sonido = bipbip.avisoBip(segundos);
+
+                    if (sonido == 0) {
+                        JOptionPane.showMessageDialog(null, "Bipp Bipp....");
+                    }
+                    break;
+                case "3":
+                    //OPcion 3
+
+                    estimarEdad devuelveEdad = new estimarEdad();
+
+                    int anoNacimiento = Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de nacimiento :"));
+
+                    int miEdad = devuelveEdad.queEdad(anoNacimiento);
+
+                    JOptionPane.showMessageDialog(null, "Su edad es : " + miEdad);
+                    break;
+                case "4":
+
+                    JOptionPane.showMessageDialog(null, "Adios....");
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Ingrese una opcion valida");
+
+
+            }
+
+
+        }
+
+
+
+
+
+
         //Ejercicio 1
+        /*
 
         double cateto1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese valor cateto1 : "));
         double cateto2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese valor cateto1 : "));
@@ -26,11 +94,22 @@ public class DemoApplication {
 
         //Ejercicio 2
 
+
         String emotion = JOptionPane.showInputDialog("Escriba una emocion predeterminada: " + "\n " +
-                "1)Saludo\n" +
-                "2)Despedida\n" +
+               "1)Saludo\n" +
+               "2)Despedida\n" +
                 "3)Agradecimiento\n" +
                 "4)Rabia");
+
+        do{
+
+             emotion = JOptionPane.showInputDialog("Escriba una emocion predeterminada: " + "\n " +
+                    "1)Saludo\n" +
+                    "2)Despedida\n" +
+                    "3)Agradecimiento\n" +
+                    "4)Rabia");
+        }while (!emotion.equals("saludo") || !emotion.equals("despedida") || !emotion.equals("agradecimiento") || !emotion.equals("rabia"));
+
         switch (emotion){
             case "saludo" :
                 JOptionPane.showMessageDialog(null,"Buen dia humano!");
@@ -47,6 +126,7 @@ public class DemoApplication {
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"Todo bien en casa?!");
+
                 break;
 
         }
@@ -171,4 +251,5 @@ public class DemoApplication {
 
           */
     }
+
 
